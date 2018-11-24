@@ -6,6 +6,11 @@
 </head>
 <body>
 <div id="app">
+    <h2>Счетчик = {{ counter }}</h2>
+    <button v-on:click="riseCounter">Увеличить</button>
+    <hr>
+    <h2 v-on:mouseover="onHover">Счетчик = {{ counter2 }}</h2>
+    <button v-on:click="counter2++">Увеличить</button>
 
 </div>
 
@@ -14,10 +19,16 @@
     new Vue({
         el: '#app',
         data: {
-
+            counter : 0,
+            counter2 : 0
         },
         methods: {
-
+            riseCounter: function () {
+                this.counter++
+            },
+            onHover: function (event) {
+                event.target.style.color='red';
+            }
         }
         })
 </script>
